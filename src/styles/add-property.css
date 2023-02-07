@@ -1,0 +1,4 @@
+.add-property {
+  display: flex;
+  flex-direction: column;
+}

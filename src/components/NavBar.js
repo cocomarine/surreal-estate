@@ -11,14 +11,14 @@ const NavBar = () => {
         src="/logo.png"
         alt="purple castle logo with 'surreal estate'"
       />
-      <ui className="navbar-links">
+      <ul className="navbar-links">
         <li className="navbar-links-item">
           <Link to="/">View Properties</Link>
         </li>
         <li className="navbar-links-item">
           <Link to="add-property">Add a Property</Link>
         </li>
-      </ui>
+      </ul>
     </div>
   );
 };
