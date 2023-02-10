@@ -1,47 +1,57 @@
-* {
+/* * {
   box-sizing: border-box;
-}
+} */
 
 .add-property {
   display: flex;
   flex-direction: column;
   padding-left: 20px;
   padding-right: 20px;
-  text-align: left;
+  justify-content: center;
+  align-items: center;
 }
 
 h3.heading {
   font-size: 18px;
 	text-transform: uppercase;
 	font-weight: 400;
-  padding: 15px;
+  padding-top: 15px;
+}
+
+.add-property-container p {
+  text-align: center;
+  font-size: 14px;
 }
 
 .add-property-container {
   width: 500px;
   border: 1px solid gray;
   border-radius: 30px;
-  padding: 10px 0px 20px 40px;
+  background-color: whitesmoke;
+  padding: 50px 0px 20px 40px;
 }
 
 .form-field {
   padding-top: 10px;
-  font-size: 18px; 
   width: 100%;
   margin-bottom: 18px;
 }
 
 select, input {
   margin-left: 30px;
+  width: 60%;
+  height: 30px;
 }
 
-button {
+button {  
+  margin: 0 auto;
+  display: block;
   cursor: pointer;
-  background-color: rgb(78, 4, 78);
+  background-color: rgb(100, 37, 100);
   border: none;
-  padding: 10px 30px;
+  padding: 10px 60px;
   font-size: 16px; 
-  color: lightgray;
+  color: white;
   
 }
 

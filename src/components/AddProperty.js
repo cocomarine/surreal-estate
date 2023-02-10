@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import postProperty from "../requests/postProperty";
+import Alert from "./Alert";
 import "../styles/add-property.css";
 
 const AddProperty = () => {
@@ -12,13 +14,20 @@ const AddProperty = () => {
       price: 0,
       email: "",
     },
+    alert: {
+      message: "",
+      isSuccess: false,
+    },
   };
 
   const [fields, setFields] = useState(initialState.fields);
+  const [alert, setAlert] = useState(initialState.alert);
 
   const handleAddProperty = (event) => {
+    postProperty(fields, setAlert);
+    console.log(alert.message, alert.isSuccess);
     event.preventDefault();
-    console.log(fields);
+    setAlert({ message: "", isSuccess: false });
   };
 
   const handleFieldChange = (event) => {
@@ -29,7 +38,7 @@ const AddProperty = () => {
     <div className="add-property">
       <h3 className="heading">Add Property</h3>
       <div className="add-property-container">
-        <p>Enter property details and click Add button.</p>
+        <Alert message={alert.message} success={alert.isSuccess} />
         <form onSubmit={handleAddProperty}>
           <div className="form-field">
             <label htmlFor="title">

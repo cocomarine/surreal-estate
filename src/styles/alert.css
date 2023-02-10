@@ -1,0 +1,10 @@
+.alert {
+  border: 1px solid green;
+  color: darkgreen;
+}
+
+.alert.alert-error {
+  border: 1px solid ridge;
+  color: darkred;
+}
+
