@@ -9,9 +9,9 @@ const AddProperty = () => {
       title: "",
       city: "Manchester",
       type: "Flat",
-      bedrooms: 1,
-      bathrooms: 1,
-      price: 0,
+      bedrooms: "1",
+      bathrooms: "1",
+      price: "0",
       email: "",
     },
     alert: {
@@ -25,7 +25,6 @@ const AddProperty = () => {
 
   const handleAddProperty = (event) => {
     postProperty(fields, setAlert);
-    console.log(alert.message, alert.isSuccess);
     event.preventDefault();
     setAlert({ message: "", isSuccess: false });
   };
@@ -36,7 +35,6 @@ const AddProperty = () => {
 
   return (
     <div className="add-property">
-      <h3 className="heading">Add Property</h3>
       <div className="add-property-container">
         <Alert message={alert.message} success={alert.isSuccess} />
         <form onSubmit={handleAddProperty}>

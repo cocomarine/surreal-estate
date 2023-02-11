@@ -1,0 +1,47 @@
+:root {
+  --castle-color: #693a69;
+  --light-grey: #e7e7e7;
+}
+
+.property-card-container {
+  background-color: white;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.castle-icon {
+  color: var(--castle-color);
+  background-color: var(--light-grey);
+  padding: 40px;
+}
+
+.property-card__title {
+  padding: 20px 5px 5px 5px;
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.property-card__type__city,
+.property-card__bedrooms,
+.property-card__bathrooms,
+.property-card__price {
+  padding: 5px;
+}
+
+.bedIcon, 
+.bathIcon, 
+.sterlingIcon,
+.emailIcon {
+  padding-right: 7px;
+}
+
+.property-card__email {
+  text-decoration: none;
+  padding-top: 10px;
+}
+
+.email-button {
+  background-color: var(--castle-color);
+  width: 100%;
+}

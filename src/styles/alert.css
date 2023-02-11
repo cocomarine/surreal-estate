@@ -1,12 +1,12 @@
 .alert {
   border: 1px solid green;
   color: darkgreen;
+  text-align: center;
+  padding: 10px;
+  margin-right: 40px;
 }
 
 .alert.alert-error {
   border: 1px solid red;
   color: red;
-  text-align: center;
-  padding: 10px;
-  margin-right: 40px;
 }
