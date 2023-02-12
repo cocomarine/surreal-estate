@@ -1,20 +1,59 @@
-import React from "react";
+import axios from "axios";
+import React, { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import PropertyCard from "./PropertyCard";
+import Alert from "./Alert";
+import SideBar from "./SideBar";
+import "../styles/properties.css";
 
 const Properties = () => {
-  const fields = {
-    title: "test title",
-    city: "test city",
-    type: "test type",
-    bedrooms: "1",
-    bathrooms: "1",
-    price: "1234",
-    email: "test@email.com",
+  const initialState = {
+    properties: [],
   };
 
+  const [properties, setProperties] = useState(initialState.properties);
+  const [alert, setAlert] = useState({ message: "" });
+
+  useEffect(() => {
+    axios
+      .get("http://localhost:4000/api/v1/PropertyListing/")
+      .then((res) => {
+        setProperties(res.data);
+        setAlert({
+          message: "",
+        });
+      })
+      .catch(() => {
+        setAlert({
+          message: "Server error. Please try again later.",
+        });
+      });
+  }, []);
+
+  const { search } = useLocation();
+
+  useEffect(() => {
+    axios
+      .get(`http://localhost:4000/api/v1/PropertyListing${search}`)
+      .then((res) => {
+        setProperties(res.data);
+      })
+      .catch((err) => console.error(err));
+  }, [search]);
+
   return (
-    <div className="properties">
-      <PropertyCard fields={fields} />
+    <div className="properties-container">
+      <div className="sidebar">
+        <SideBar />
+      </div>
+      <div className="properties-cards">
+        <Alert message={alert.message} success={alert.isSuccess} />
+        {properties.map((property) => (
+          <div className="item" key={property._id}>
+            <PropertyCard {...property} />
+          </div>
+        ))}
+      </div>
     </div>
   );
 };

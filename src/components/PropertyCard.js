@@ -10,9 +10,15 @@ import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
 import { faFortAwesome } from "@fortawesome/free-brands-svg-icons";
 import "../styles/property-card.css";
 
-const PropertyCard = ({ fields }) => {
-  const { title, type, bathrooms, bedrooms, price, city, email } = fields;
-
+const PropertyCard = ({
+  title,
+  type,
+  bathrooms,
+  bedrooms,
+  price,
+  city,
+  email,
+}) => {
   return (
     <div className="property-card-container">
       <FontAwesomeIcon icon={faFortAwesome} size="2x" className="castle-icon" />
@@ -59,15 +65,13 @@ const PropertyCard = ({ fields }) => {
 };
 
 PropertyCard.propTypes = {
-  fields: PropTypes.shape({
-    title: PropTypes.string,
-    city: PropTypes.string,
-    type: PropTypes.string,
-    bedrooms: PropTypes.string,
-    bathrooms: PropTypes.string,
-    price: PropTypes.string,
-    email: PropTypes.string,
-  }).isRequired,
+  title: PropTypes.string.isRequired,
+  city: PropTypes.string.isRequired,
+  type: PropTypes.string.isRequired,
+  bedrooms: PropTypes.string.isRequired,
+  bathrooms: PropTypes.string.isRequired,
+  price: PropTypes.string.isRequired,
+  email: PropTypes.string.isRequired,
 };
 
 export default PropertyCard;

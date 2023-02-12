@@ -1,0 +1,25 @@
+.properties-container {
+  display: grid;
+  grid-template-columns: 160px auto;
+  grid-template-areas: 'sidebar properties-cards';
+}
+
+.sidebar {
+  grid-area: sidebar;
+  background-color: white;
+  padding-top: 0.5rem;
+  padding-left: 0.5rem;
+  height: 100vh;
+}
+
+.properties-cards {
+  grid-area: properties-cards;
+  padding: 0.5rem;
+}
+
+.properties-cards > .item {
+  display: inline-block;
+  width: 33.33%;
+  padding: 0.5rem;
+  box-sizing: border-box;
+}
