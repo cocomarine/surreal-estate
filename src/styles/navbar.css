@@ -31,3 +31,7 @@
   text-decoration: none;
   color: black;
 }
+
+.navbar-links-item a:hover {
+  text-decoration: underline;
+}

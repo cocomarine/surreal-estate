@@ -19,7 +19,19 @@
 
 .properties-cards > .item {
   display: inline-block;
-  width: 33.33%;
+  width: 100%;
   padding: 0.5rem;
   box-sizing: border-box;
+}
+
+@media screen and (min-width: 768px) {
+  .properties-cards > .item {
+    width: 50%;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .properties-cards > .item {
+    width: 33.33%;
+  }
 }

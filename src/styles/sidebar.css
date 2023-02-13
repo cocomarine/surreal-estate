@@ -12,10 +12,10 @@
 }
 
 .city-link:hover, .price-link:hover {
-  font-weight: 600;
+  text-decoration: underline;
 }
 
 .sort-container {
-  padding-top: 30px;
+  padding-top: 40px;
 }
 
