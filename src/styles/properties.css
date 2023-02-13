@@ -1,6 +1,6 @@
 .properties-container {
   display: grid;
-  grid-template-columns: 160px auto;
+  grid-template-columns: 200px auto;
   grid-template-areas: 'sidebar properties-cards';
 }
 

@@ -1,9 +1,15 @@
+:root {
+  --castle-color: #693a69;
+  --light-castle-color: #bb85bb;
+  --light-grey: #e7e7e7;
+}
+
 .sidebar {
   font-size: 14px;
 }
 
 .city, .price {
-  padding-top: 30px;
+  padding-top: 25px;
 }
 
 .city-link, .price-link {
@@ -16,6 +22,28 @@
 }
 
 .sort-container {
-  padding-top: 40px;
+  padding-top: 30px;
 }
 
+.search-input, .search-button {
+  display: inline-block;
+  margin-bottom: 25px;
+}
+
+.search-input {
+  width: 70%;
+  font-size: 16px;
+  padding: 3px;
+  background-color: var(--light-grey);
+  border: none;
+}
+
+.search-button {
+  width: 28px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.search-button:hover {
+  background-color: var(--light-castle-color);
+}
