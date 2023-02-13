@@ -24,7 +24,7 @@
   box-sizing: border-box;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 600px) {
   .properties-cards > .item {
     width: 50%;
   }
