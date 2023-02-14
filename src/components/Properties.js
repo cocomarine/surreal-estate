@@ -43,10 +43,29 @@ const Properties = ({ userID }) => {
   }, [search]);
 
   const handleSaveProperty = (propertyId) => {
-    axios.post("http://localhost:4000/api/v1/Favourite/", {
-      propertyListing: propertyId,
-      fbUserId: userID,
+    axios.get("http://localhost:4000/api/v1/Favourite/").then((res) => {
+      if (res.data) {
+        const existingFavs = res.data;
+        const matchingEntry = existingFavs.filter(
+          (existingFav) => existingFav.propertyListing === propertyId
+        );
+        if (!matchingEntry.length) {
+          axios.post("http://localhost:4000/api/v1/Favourite/", {
+            propertyListing: propertyId,
+            fbUserId: userID,
+          });
+        }
+      } else {
+        axios.post("http://localhost:4000/api/v1/Favourite/", {
+          propertyListing: propertyId,
+          fbUserId: userID,
+        });
+      }
     });
+    // axios.post("http://localhost:4000/api/v1/Favourite/", {
+    //   propertyListing: propertyId,
+    //   fbUserId: userID,
+    // });
   };
 
   return (
