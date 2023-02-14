@@ -114,7 +114,7 @@ exports[`PropertyCard renders correctly 1`] = `
         aria-hidden="true"
         className="svg-inline--fa fa-envelope emailIcon"
         data-icon="envelope"
-        data-prefix="far"
+        data-prefix="fas"
         data-testid="email-icon"
         focusable="false"
         role="img"
@@ -123,7 +123,7 @@ exports[`PropertyCard renders correctly 1`] = `
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
-          d="M64 112c-8.8 0-16 7.2-16 16v22.1L220.5 291.7c20.7 17 50.4 17 71.1 0L464 150.1V128c0-8.8-7.2-16-16-16H64zM48 212.2V384c0 8.8 7.2 16 16 16H448c8.8 0 16-7.2 16-16V212.2L322 328.8c-38.4 31.5-93.7 31.5-132 0L48 212.2zM0 128C0 92.7 28.7 64 64 64H448c35.3 0 64 28.7 64 64V384c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V128z"
+          d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4L236.8 313.6c11.4 8.5 27 8.5 38.4 0L492.8 150.4c12.1-9.1 19.2-23.3 19.2-38.4c0-26.5-21.5-48-48-48H48zM0 176V384c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V176L294.4 339.2c-22.8 17.1-54 17.1-76.8 0L0 176z"
           fill="currentColor"
           style={Object {}}
         />
@@ -131,5 +131,31 @@ exports[`PropertyCard renders correctly 1`] = `
       Email
     </button>
   </a>
+  <button
+    className="save-button"
+    data-testid="save-button"
+    onClick={[Function]}
+    type="submit"
+  >
+    <svg
+      aria-hidden="true"
+      className="svg-inline--fa fa-heart saveIcon"
+      data-icon="heart"
+      data-prefix="far"
+      data-testid="save-icon"
+      focusable="false"
+      role="img"
+      style={Object {}}
+      viewBox="0 0 512 512"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M244 84L255.1 96L267.1 84.02C300.6 51.37 347 36.51 392.6 44.1C461.5 55.58 512 115.2 512 185.1V190.9C512 232.4 494.8 272.1 464.4 300.4L283.7 469.1C276.2 476.1 266.3 480 256 480C245.7 480 235.8 476.1 228.3 469.1L47.59 300.4C17.23 272.1 0 232.4 0 190.9V185.1C0 115.2 50.52 55.58 119.4 44.1C164.1 36.51 211.4 51.37 244 84C243.1 84 244 84.01 244 84L244 84zM255.1 163.9L210.1 117.1C188.4 96.28 157.6 86.4 127.3 91.44C81.55 99.07 48 138.7 48 185.1V190.9C48 219.1 59.71 246.1 80.34 265.3L256 429.3L431.7 265.3C452.3 246.1 464 219.1 464 190.9V185.1C464 138.7 430.4 99.07 384.7 91.44C354.4 86.4 323.6 96.28 301.9 117.1L255.1 163.9z"
+        fill="currentColor"
+        style={Object {}}
+      />
+    </svg>
+    Save
+  </button>
 </div>
 `;

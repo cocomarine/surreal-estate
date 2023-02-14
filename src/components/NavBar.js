@@ -23,7 +23,7 @@ const NavBar = ({ onLogin, userID, onLogout }) => {
       <div className="login-button">
         {userID ? (
           <button className="logout-button" type="submit" onClick={onLogout}>
-            Sign Out
+            SIGN OUT
           </button>
         ) : (
           <FacebookLogin appId="506761728339732" callback={onLogin} />

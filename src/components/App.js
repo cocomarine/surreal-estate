@@ -10,7 +10,6 @@ const App = () => {
   const [userID, setUserID] = useState("");
 
   const handleLogin = (response) => {
-    console.log(response);
     setUserID(response.id);
   };
 
@@ -24,7 +23,7 @@ const App = () => {
     <div className="App">
       <NavBar onLogin={handleLogin} userID={userID} onLogout={handleLogout} />
       <Routes>
-        <Route path="/" element={<Properties />} />
+        <Route path="/" element={<Properties userID={userID} />} />
         <Route path="add-property" element={<AddProperty />} />
       </Routes>
     </div>

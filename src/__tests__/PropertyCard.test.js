@@ -1,10 +1,11 @@
 import React from "react";
-import { render, screen } from "@testing-library/react";
+import { render, screen, fireEvent } from "@testing-library/react";
 import renderer from "react-test-renderer";
 import PropertyCard from "../components/PropertyCard";
 
 describe("PropertyCard", () => {
   const validProps = {
+    _id: "test id",
     title: "test title",
     city: "test city",
     type: "test type",
@@ -12,6 +13,8 @@ describe("PropertyCard", () => {
     bathrooms: "1",
     price: "1234",
     email: "test@email.com",
+    userID: "test userID",
+    onSaveProperty: jest.fn(),
   };
 
   it("renders correctly", () => {
@@ -34,5 +37,28 @@ describe("PropertyCard", () => {
     expect(screen.getByTestId("bed-icon")).toHaveClass("bedIcon");
     expect(screen.getByTestId("bath-icon")).toHaveClass("bathIcon");
     expect(screen.getByTestId("email-icon")).toHaveClass("emailIcon");
+  });
+
+  it("renders no Save button when userID is not truthy", () => {
+    validProps.userID = "";
+    render(<PropertyCard {...validProps} />);
+    const saveButton = screen.queryByTestId("save-button");
+
+    expect(saveButton).not.toBeInTheDocument();
+  });
+
+  it("renders Save button when userID is truthy", () => {
+    validProps.userID = "test userID";
+    render(<PropertyCard {...validProps} />);
+    const saveButton = screen.queryByTestId("save-button");
+
+    expect(saveButton).toBeInTheDocument();
+  });
+
+  it("clicking Save button calls correct function", async () => {
+    render(<PropertyCard {...validProps} />);
+
+    await fireEvent.click(screen.queryByTestId("save-button"));
+    expect(validProps.onSaveProperty).toHaveBeenCalled();
   });
 });

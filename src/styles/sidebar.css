@@ -4,35 +4,9 @@
   --light-grey: #e7e7e7;
 }
 
-.sidebar {
-  font-size: 14px;
-}
-
-.city, .price {
-  padding-top: 25px;
-}
-
-.city-link, .price-link {
-  text-decoration: none;
-  color: black;
-}
-
-.city-link:hover, .price-link:hover {
-  text-decoration: underline;
-}
-
-.sort-container {
-  padding-top: 30px;
-}
-
-.search-input, .search-button {
-  display: inline-block;
-  margin-bottom: 25px;
-}
-
 .search-input {
   width: 70%;
-  font-size: 16px;
+  font-size: 14px;
   padding: 3px;
   background-color: var(--light-grey);
   border: none;
@@ -46,4 +20,26 @@
 
 .search-button:hover {
   background-color: var(--light-castle-color);
+}
+
+.search-input, .search-button {
+  display: inline-block;
+  margin-bottom: 25px;
+}
+
+.city, .price {
+  padding-top: 20px;
+}
+
+.city-link, .price-link {
+  text-decoration: none;
+  color: black;
+}
+
+.city-link:hover, .price-link:hover {
+  text-decoration: underline;
+}
+
+.sort-container {
+  padding-top: 20px;
 }

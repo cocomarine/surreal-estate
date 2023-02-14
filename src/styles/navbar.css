@@ -3,8 +3,7 @@
 .navbar {
   border-bottom: 1px solid gray;
   background-color: white;
-  /* height: 60px;
-  width: 100%; */
+  overflow: hidden;
   font-weight: bold;
   display: flex;
 }
@@ -36,6 +35,20 @@
 
 .navbar-links-item a:hover {
   text-decoration: underline;
+}
+
+.login-button {
+  margin-left: auto;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.logout-button {
+  background-color: #4C69BA;
+  height: 60px;
+  font-size: 15px;
+  font-weight: 800;
+  padding: 20px;
 }
 
 @media screen and (max-width: 600px) {
