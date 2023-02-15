@@ -1,0 +1,12 @@
+.login-msg {
+  border: 1px solid black;
+  text-align: center;
+  padding: 10px;
+  margin: 10px;
+}
+
+.saved-properties-container{
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+}

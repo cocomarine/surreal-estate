@@ -62,10 +62,6 @@ const Properties = ({ userID }) => {
         });
       }
     });
-    // axios.post("http://localhost:4000/api/v1/Favourite/", {
-    //   propertyListing: propertyId,
-    //   fbUserId: userID,
-    // });
   };
 
   return (
