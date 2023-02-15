@@ -44,18 +44,12 @@ const Properties = ({ userID }) => {
 
   const handleSaveProperty = (propertyId) => {
     axios.get("http://localhost:4000/api/v1/Favourite/").then((res) => {
-      if (res.data) {
-        const existingFavs = res.data;
-        const matchingEntry = existingFavs.filter(
-          (existingFav) => existingFav.propertyListing === propertyId
-        );
-        if (!matchingEntry.length) {
-          axios.post("http://localhost:4000/api/v1/Favourite/", {
-            propertyListing: propertyId,
-            fbUserId: userID,
-          });
-        }
-      } else {
+      const existingFavs = res.data;
+      const matchingEntry = existingFavs.filter(
+        (existingFav) => existingFav.propertyListing === propertyId
+      );
+
+      if (!matchingEntry.length) {
         axios.post("http://localhost:4000/api/v1/Favourite/", {
           propertyListing: propertyId,
           fbUserId: userID,

@@ -25,7 +25,6 @@ const SavedProperties = ({ userID }) => {
       .get("http://localhost:4000/api/v1/Favourite?populate=propertyListing")
       .then((res) => {
         setSavedProperties(res.data);
-        console.log(res.data);
         setAlert({
           message: "",
         });

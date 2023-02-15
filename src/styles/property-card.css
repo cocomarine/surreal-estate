@@ -61,7 +61,6 @@
   top: 2px;
 }
 
-/* .save-button:disabled {
+.save-button:disabled {
   position: static;
-} */
-
+}

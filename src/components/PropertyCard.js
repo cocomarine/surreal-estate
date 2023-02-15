@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import PropTypes from "prop-types";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -13,7 +14,7 @@ import { faFortAwesome } from "@fortawesome/free-brands-svg-icons";
 import "../styles/property-card.css";
 
 const PropertyCard = ({
-  _id,
+  _id: propertyId,
   title,
   type,
   bathrooms,
@@ -24,7 +25,17 @@ const PropertyCard = ({
   userID,
   onSaveProperty,
 }) => {
-  // const [disable, setDisable] = useState(false);
+  const [savedState, setSavedState] = useState(0);
+
+  useEffect(() => {
+    axios.get(`http://localhost:4000/api/v1/Favourite/`).then((res) => {
+      const favs = res.data;
+      const matchingFav = favs.filter(
+        (fav) => fav.propertyListing === propertyId
+      );
+      setSavedState(matchingFav.length);
+    });
+  }, [savedState]);
 
   return (
     <div className="property-card-container">
@@ -69,27 +80,20 @@ const PropertyCard = ({
       </a>
       {userID && (
         <button
-          // disabled={disable}
+          disabled={savedState}
           type="submit"
           className="save-button"
           data-testid="save-button"
           onClick={() => {
-            onSaveProperty(_id);
-            // setDisable(true);
+            onSaveProperty(propertyId);
           }}
         >
-          {/* <FontAwesomeIcon
-            icon={disable ? filledHeart : faHeart}
-            className="saveIcon"
-            data-testid="save-icon"
-          />
-          {disable ? <>Saved</> : <>Save</>} */}
           <FontAwesomeIcon
-            icon={faHeart}
+            icon={savedState ? filledHeart : faHeart}
             className="saveIcon"
             data-testid="save-icon"
           />
-          Save
+          {savedState ? <>Saved</> : <>Save</>}
         </button>
       )}
     </div>

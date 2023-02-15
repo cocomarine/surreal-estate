@@ -134,6 +134,7 @@ exports[`PropertyCard renders correctly 1`] = `
   <button
     className="save-button"
     data-testid="save-button"
+    disabled={0}
     onClick={[Function]}
     type="submit"
   >
