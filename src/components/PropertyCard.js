@@ -14,7 +14,7 @@ import { faFortAwesome } from "@fortawesome/free-brands-svg-icons";
 import "../styles/property-card.css";
 
 const PropertyCard = ({
-  _id: propertyId,
+  _id,
   title,
   type,
   bathrooms,
@@ -23,19 +23,38 @@ const PropertyCard = ({
   city,
   email,
   userID,
-  onSaveProperty,
 }) => {
   const [savedState, setSavedState] = useState(0);
 
   useEffect(() => {
     axios.get(`http://localhost:4000/api/v1/Favourite/`).then((res) => {
       const favs = res.data;
-      const matchingFav = favs.filter(
-        (fav) => fav.propertyListing === propertyId
-      );
+      const matchingFav = favs.filter((fav) => fav.propertyListing === _id);
       setSavedState(matchingFav.length);
     });
-  }, [savedState]);
+  }, []);
+
+  const handleSaveProperty = (propertyId) => {
+    axios.get("http://localhost:4000/api/v1/Favourite/").then((res) => {
+      const existingFavs = res.data;
+      const matchingEntry = existingFavs.filter(
+        (existingFav) => existingFav.propertyListing === propertyId
+      );
+
+      if (!matchingEntry.length) {
+        axios
+          .post("http://localhost:4000/api/v1/Favourite/", {
+            propertyListing: propertyId,
+            fbUserId: userID,
+          })
+          .then(() => {
+            setSavedState(1);
+          });
+      } else {
+        setSavedState(0);
+      }
+    });
+  };
 
   return (
     <div className="property-card-container">
@@ -85,7 +104,7 @@ const PropertyCard = ({
           className="save-button"
           data-testid="save-button"
           onClick={() => {
-            onSaveProperty(propertyId);
+            handleSaveProperty(_id);
           }}
         >
           <FontAwesomeIcon
@@ -110,7 +129,6 @@ PropertyCard.propTypes = {
   price: PropTypes.string.isRequired,
   email: PropTypes.string.isRequired,
   userID: PropTypes.string.isRequired,
-  onSaveProperty: PropTypes.func.isRequired,
 };
 
 export default PropertyCard;
