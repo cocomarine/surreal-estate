@@ -18,10 +18,6 @@ const SideBar = () => {
         ...valueObj,
       }),
     };
-    // const newQueryParams = {
-    //   ...currentQueryParams,
-    //   [operation]: JSON.stringify(valueObj)
-    // }
 
     return qs.stringify(newQueryParams, {
       addQueryPrefix: true,

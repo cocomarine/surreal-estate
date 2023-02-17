@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SavedPropertyCard renders correctly 1`] = `
+<div
+  className="saved-property-card-container"
+>
+  <div
+    className="saved-property-card"
+  >
+    test title
+     in 
+    test city
+    <button
+      className="remove-button"
+      onClick={[Function]}
+      type="submit"
+    >
+      Remove
+    </button>
+  </div>
+</div>
+`;
