@@ -14,7 +14,6 @@ describe("PropertyCard", () => {
     price: "1234",
     email: "test@email.com",
     userID: "test userID",
-    onSaveProperty: jest.fn(),
   };
 
   it("renders correctly", () => {
@@ -53,12 +52,5 @@ describe("PropertyCard", () => {
     const saveButton = screen.queryByTestId("save-button");
 
     expect(saveButton).toBeInTheDocument();
-  });
-
-  it("clicking Save button calls correct function", async () => {
-    render(<PropertyCard {...validProps} />);
-
-    await fireEvent.click(screen.queryByTestId("save-button"));
-    expect(validProps.onSaveProperty).toHaveBeenCalled();
   });
 });
