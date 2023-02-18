@@ -11,20 +11,24 @@ describe("SavedPropertyCard", () => {
     onUnsaveProperty: jest.fn(),
   };
 
+  const setup = () => {
+    render(<SavedPropertyCard {...validProps} />);
+  };
+
   it("renders correctly", () => {
     const rendered = renderer.create(<SavedPropertyCard {...validProps} />);
     expect(rendered).toMatchSnapshot();
   });
 
   it("renders correct values for props", () => {
-    render(<SavedPropertyCard {...validProps} />);
+    setup();
 
     expect(screen.getByText("test title in test city")).toBeInTheDocument();
     expect(screen.getByRole("button")).toHaveClass("remove-button");
   });
 
   it("clicking button calls correct function", () => {
-    render(<SavedPropertyCard {...validProps} />);
+    setup();
 
     fireEvent.click(screen.getByRole("button"));
     expect(validProps.onUnsaveProperty).toHaveBeenCalled();

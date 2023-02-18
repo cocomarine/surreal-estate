@@ -1,0 +1,58 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NavBar renders correctly 1`] = `
+<div
+  className="navbar"
+>
+  <img
+    alt="purple castle logo with 'surreal estate'"
+    className="navbar-logo"
+    src="/logo.png"
+  />
+  <ul
+    className="navbar-links"
+  >
+    <li
+      className="navbar-links-item"
+    >
+      <a
+        href="/"
+        onClick={[Function]}
+      >
+        View Properties
+      </a>
+    </li>
+    <li
+      className="navbar-links-item"
+    >
+      <a
+        href="/saved-properties"
+        onClick={[Function]}
+      >
+        Saved Properties
+      </a>
+    </li>
+    <li
+      className="navbar-links-item"
+    >
+      <a
+        href="/add-property"
+        onClick={[Function]}
+      >
+        Add a Property
+      </a>
+    </li>
+  </ul>
+  <div
+    className="login-button"
+  >
+    <button
+      className="logout-button"
+      onClick={[MockFunction]}
+      type="submit"
+    >
+      SIGN OUT
+    </button>
+  </div>
+</div>
+`;

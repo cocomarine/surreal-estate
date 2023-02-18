@@ -16,13 +16,17 @@ describe("PropertyCard", () => {
     userID: "test userID",
   };
 
+  const setup = () => {
+    render(<PropertyCard {...validProps} />);
+  };
+
   it("renders correctly", () => {
     const rendered = renderer.create(<PropertyCard {...validProps} />);
     expect(rendered).toMatchSnapshot();
   });
 
   it("renders correct values for props", () => {
-    render(<PropertyCard {...validProps} />);
+    setup();
 
     expect(screen.getByText("test title")).toHaveClass("property-card__title");
     expect(screen.getByText("test type - test city")).toHaveClass(
@@ -40,7 +44,7 @@ describe("PropertyCard", () => {
 
   it("renders no Save button when userID is not truthy", () => {
     validProps.userID = "";
-    render(<PropertyCard {...validProps} />);
+    setup();
     const saveButton = screen.queryByTestId("save-button");
 
     expect(saveButton).not.toBeInTheDocument();
@@ -48,7 +52,7 @@ describe("PropertyCard", () => {
 
   it("renders Save button when userID is truthy", () => {
     validProps.userID = "test userID";
-    render(<PropertyCard {...validProps} />);
+    setup();
     const saveButton = screen.queryByTestId("save-button");
 
     expect(saveButton).toBeInTheDocument();

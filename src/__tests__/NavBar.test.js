@@ -1,6 +1,7 @@
 import React from "react";
 import { render, screen, fireEvent } from "@testing-library/react";
 import renderer from "react-test-renderer";
+import { MemoryRouter } from "react-router-dom";
 import NavBar from "../components/NavBar";
 
 describe("NavBar", () => {
@@ -10,10 +11,28 @@ describe("NavBar", () => {
     onLogout: jest.fn(),
   };
 
-  xit("renders correctly", () => {
-    const { asFragment } = render(<NavBar validProps={validProps} />);
-    expect(asFragment()).toMatchSnapshot();
-    // const rendered = renderer.create(<NavBar validProps={validProps} />);
-    // expect(rendered).toMatchSnapshot();
+  const setup = () => {
+    render(
+      <MemoryRouter>
+        <NavBar {...validProps} />
+      </MemoryRouter>
+    );
+  };
+
+  it("renders correctly", () => {
+    const rendered = renderer.create(
+      <MemoryRouter>
+        <NavBar {...validProps} />
+      </MemoryRouter>
+    );
+    expect(rendered).toMatchSnapshot();
+  });
+
+  it("renders NavBar links correctly", () => {
+    setup();
+
+    expect(screen.getByText("View Properties")).toBeInTheDocument();
+    expect(screen.getByText("Saved Properties")).toBeInTheDocument();
+    expect(screen.getByText("Add a Property")).toBeInTheDocument();
   });
 });
