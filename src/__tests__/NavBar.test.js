@@ -35,4 +35,43 @@ describe("NavBar", () => {
     expect(screen.getByText("Saved Properties")).toBeInTheDocument();
     expect(screen.getByText("Add a Property")).toBeInTheDocument();
   });
+
+  it("renders logout button correctely when logged in", () => {
+    setup();
+
+    expect(screen.getByText("SIGN OUT")).toBeInTheDocument();
+  });
+
+  it("clicking logout button calls correct function", () => {
+    setup();
+
+    fireEvent.click(screen.getByRole("button"));
+    expect(validProps.onLogout).toHaveBeenCalled();
+    expect(validProps.onLogout).toHaveBeenCalledTimes(1);
+  });
+
+  xit("clicking login button calls correct function", () => {
+    validProps.userID = "";
+    setup();
+
+    fireEvent.click(screen.getByRole("button"));
+    expect(validProps.onLogin).toHaveBeenCalled();
+    expect(validProps.onLogin).toHaveBeenCalledTimes(1);
+  });
+
+  xit("renders NavBar links correctly when logged out", () => {
+    validProps.userID = "";
+    setup();
+
+    expect(screen.getByText("View Properties")).toBeInTheDocument();
+    expect(screen.getByText("Saved Properties")).toBeInTheDocument();
+    expect(screen.getByText("Add a Property")).toBeInTheDocument();
+  });
+
+  xit("renders Facebook login button correctely when logged out", () => {
+    validProps.userID = "";
+    setup();
+
+    expect(screen.getByText("LOGIN WITH FACEBOOK")).toBeInTheDocument();
+  });
 });
