@@ -1,10 +1,16 @@
 import React from "react";
-import renderer from "react-test-renderer";
+import { render } from "@testing-library/react";
+import { MemoryRouter } from "react-router-dom";
 import App from "../components/App";
 
 describe("App", () => {
   xit("renders App correctly", () => {
-    const rendered = renderer.create(<App />);
-    expect(rendered).toMatchSnapshot();
+    const { asFragment } = render(
+      <MemoryRouter>
+        <App />
+      </MemoryRouter>
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 });
+

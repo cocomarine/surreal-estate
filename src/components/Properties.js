@@ -42,22 +42,6 @@ const Properties = ({ userID }) => {
       .catch((err) => console.error(err));
   }, [search]);
 
-  const handleSaveProperty = (propertyId) => {
-    axios.get("http://localhost:4000/api/v1/Favourite/").then((res) => {
-      const existingFavs = res.data;
-      const matchingEntry = existingFavs.filter(
-        (existingFav) => existingFav.propertyListing === propertyId
-      );
-
-      if (!matchingEntry.length) {
-        axios.post("http://localhost:4000/api/v1/Favourite/", {
-          propertyListing: propertyId,
-          fbUserId: userID,
-        });
-      }
-    });
-  };
-
   return (
     <div className="properties-container">
       <div className="sidebar">
@@ -67,11 +51,7 @@ const Properties = ({ userID }) => {
         <Alert message={alert.message} success={alert.isSuccess} />
         {properties.map((property) => (
           <div className="item" key={property._id}>
-            <PropertyCard
-              userID={userID}
-              {...property}
-              onSaveProperty={handleSaveProperty}
-            />
+            <PropertyCard userID={userID} {...property} />
           </div>
         ))}
       </div>

@@ -4,10 +4,22 @@
   --light-grey: #e7e7e7;
 }
 
+.sidebar {
+  height: 100%;
+  width: 160px;
+  font-size: 14px;
+  position: fixed;
+  top: 57px;
+  left: 0;
+  padding-top: 1rem;
+  padding-left: 0.5rem;
+  background-color: white;
+}
+
 .search-input {
   width: 70%;
   font-size: 14px;
-  padding: 3px;
+  padding: 4px;
   background-color: var(--light-grey);
   border: none;
 }
@@ -42,4 +54,10 @@
 
 .sort-container {
   padding-top: 20px;
+}
+
+@media screen and (max-width: 640px) {
+  .sidebar {
+    top: 266px;
+  }
 }

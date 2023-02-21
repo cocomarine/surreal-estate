@@ -22,6 +22,21 @@ const NavBar = ({ onLogin, userID, onLogout }) => {
         <li className="navbar-links-item">
           <Link to="add-property">Add a Property</Link>
         </li>
+        {/* <li className="navbar-links-item">
+          <div className="login-button">
+            {userID ? (
+              <button
+                className="logout-button"
+                type="submit"
+                onClick={onLogout}
+              >
+                SIGN OUT
+              </button>
+            ) : (
+              <FacebookLogin appId="506761728339732" callback={onLogin} />
+            )}
+          </div>
+        </li> */}
       </ul>
       <div className="login-button">
         {userID ? (
