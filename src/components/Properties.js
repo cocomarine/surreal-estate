@@ -44,7 +44,7 @@ const Properties = ({ userID }) => {
 
   return (
     <div className="properties-container">
-      <div className="sidebar">
+      <div className="sidebar-container">
         <SideBar />
       </div>
       <div className="properties-cards">

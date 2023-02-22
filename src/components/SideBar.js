@@ -18,10 +18,6 @@ const SideBar = () => {
         ...valueObj,
       }),
     };
-    // const newQueryParams = {
-    //   ...currentQueryParams,
-    //   [operation]: JSON.stringify(valueObj)
-    // }
 
     return qs.stringify(newQueryParams, {
       addQueryPrefix: true,
@@ -55,7 +51,7 @@ const SideBar = () => {
       </form>
       <div className="city-link-container">
         <b>Filter by city</b>
-        <div className="city">
+        <div className="city-name">
           <Link
             to={buildQueryString("query", { city: "Manchester" })}
             className="city-link"
@@ -63,7 +59,7 @@ const SideBar = () => {
             Manchester
           </Link>
         </div>
-        <div className="city">
+        <div className="city-name">
           <Link
             to={buildQueryString("query", { city: "Leeds" })}
             className="city-link"
@@ -71,7 +67,7 @@ const SideBar = () => {
             Leeds
           </Link>
         </div>
-        <div className="city">
+        <div className="city-name">
           <Link
             to={buildQueryString("query", { city: "Sheffield" })}
             className="city-link"
@@ -79,7 +75,7 @@ const SideBar = () => {
             Sheffield
           </Link>
         </div>
-        <div className="city">
+        <div className="city-name">
           <Link
             to={buildQueryString("query", { city: "Liverpool" })}
             className="city-link"
@@ -87,7 +83,7 @@ const SideBar = () => {
             Liverpool
           </Link>
         </div>
-        <div className="city">
+        <div className="city-name">
           <Link
             to={buildQueryString("query", { city: "Birmingham" })}
             className="city-link"
@@ -95,7 +91,7 @@ const SideBar = () => {
             Birmingham
           </Link>
         </div>
-        <div className="city">
+        <div className="city-name">
           <Link
             to={buildQueryString("query", { city: "London" })}
             className="city-link"
@@ -106,7 +102,7 @@ const SideBar = () => {
       </div>
       <div className="sort-container">
         <b>Sort by</b>
-        <div className="price">
+        <div className="price-sort">
           <Link
             to={buildQueryString("sort", { price: 1 })}
             className="price-link"
@@ -114,7 +110,7 @@ const SideBar = () => {
             Price Ascending
           </Link>
         </div>
-        <div className="price">
+        <div className="price-sort">
           <Link
             to={buildQueryString("sort", { price: -1 })}
             className="price-link"

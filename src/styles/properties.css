@@ -1,11 +1,13 @@
 .properties-container {
   display: grid;
   grid-template-columns: 160px auto;
-  grid-template-areas: 'sidebar properties-cards';
+  grid-template-areas: 'sidebar-container properties-cards';
 }
 
-.sidebar {
-  grid-area: sidebar;
+.sidebar-container {
+  grid-area: sidebar-container;
+  background-color: white;
+  height: 100%;
 }
 
 .properties-cards {
