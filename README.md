@@ -17,10 +17,8 @@ This is a property search engine similar to RightMove or Zoopla with multiple pa
 - An add property page where new properties can be added to the listing.
 
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=kM8F9_hztGM" target="_blank">
- <img src="https://img.youtube.com/vi/kM8F9_hztGM/default.jpg" alt="huddleUp presentation video" />
  <figcaption>Demo video</figcaption>
 </a>
-<br></br>
 
 ## Concepts covered
 - React to build user interfaces (UI) and web applications
