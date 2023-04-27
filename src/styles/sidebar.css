@@ -6,12 +6,15 @@
 
 .sidebar {
   width: 160px;
+  height: 100vh;
   font-size: 14px;
   position: fixed;
   top: 57px;
   left: 0;
+  right: 0;
   padding-top: 1rem;
   padding-left: 0.8rem;
+  background-color: white;
 }
 
 .search-input {
